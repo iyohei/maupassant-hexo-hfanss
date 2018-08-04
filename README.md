@@ -20,7 +20,6 @@
 > [https://www.haomwei.com/](https://www.haomwei.com/)
 
 ## 本优化版
-
 > github地址：
 >
 > [https://github.com/iyohei/maupassant-hexo-hfanss](https://github.com/iyohei/maupassant-hexo-hfanss)
@@ -73,7 +72,7 @@ baidu_analytics:  ## 百度统计ID id, e.g. 8006843039519956000
 ## 图片灯箱开关
 fancybox: true ## 是否启用Fancybox图片灯箱效果,建议开启（效果为点击图片既放大）
 ##版权声明，加在每篇文章下方
-banquan: 
+banquan:
   enable: true ##是否开启
   name: 幻凡ss
   note: 本文所有权归博主所有，转载请注明署名、出处！Thanks ##版权信息
@@ -117,7 +116,7 @@ weibo:
 qq:
     enable: true
     name: 2158798 ##QQ号码
-    url: https://wpa.qq.com/msgrd?v=3&uin=2158798&site=qq&menu=yes ##网页QQ聊天的外链  如  https://wpa.qq.com/msgrd?v=3&uin=2158798&site=qq&menu=yes 
+    url: https://wpa.qq.com/msgrd?v=3&uin=2158798&site=qq&menu=yes ##网页QQ聊天的外链  如  https://wpa.qq.com/msgrd?v=3&uin=2158798&site=qq&menu=yes
 ## email相关信息
 email:
     enable: true
@@ -155,7 +154,7 @@ csdn:
     url: https://blog.csdn.net/q2158798 ##CSDN博客外链 如：https://blog.csdn.net/q2158798
 ## 底部显示设置
 footersenable: true   ##是否开启底部菜单栏
-footers: 
+footers:
   - gywo    ##关于我
   - gzhao   ##公众号或微信二维码
   - xzhao   ##百度熊掌号相关信息
@@ -173,7 +172,7 @@ menu:
     icon: fa-user2
   - page: tool
     directory: tool/
-    icon: fa-user2 
+    icon: fa-user2
   - page: guestbook
     directory: comment/
     icon: fa-rss2
@@ -191,7 +190,7 @@ mobileMenu:
     icon: fa-user2
   - page: tool
     directory: tool/
-    icon: fa-user2 
+    icon: fa-user2
   - page: guestbook
     directory: comment/
     icon: fa-rss2
@@ -232,30 +231,33 @@ version: 0.1.0
 
 ---
 # 使用方法
-## 下载主题	
-> https://gitee.com/iyohei/hfanss.git
+## 下载主题    
+> [https://github.com/iyohei/maupassant-hexo-hfanss](https://github.com/iyohei/maupassant-hexo-hfanss)
+如下载不下来可从备份地址下载：[点我](https://gitee.com/iyohei/hfanss)
 
-# 安装插件	
+# 安装插件    
 ```YAML
 npm install --save hexo-deployer-git hexo-generator-archive hexo-generator-category hexo-generator-index-pin-top hexo-generator-search hexo-generator-tag hexo-helper-qrcode hexo-renderer-ejs hexo-renderer-marked hexo-renderer-pug hexo-renderer-sass hexo-renderer-stylus hexo-server hexo-tag-aplayer hexo-wordcount
 ```
+
 安装不成功可以通过 [淘宝镜像](https://npm.taobao.org) 下载
 
-# 修改配置	
+# 修改配置    
+
 ```YAML
 博客根目录下
 config.yml
-URL分类下	
- url: http://www.baidu.com ## 分享页的头网址，域名地址或iyohei.githug.io	
- permalink: :year/:title.html ## 更改文章页的地址带有.html后缀	
-博客根目录下 source文件夹下	
- 新建about文件夹--含一个index.md文件--最下方  关于博主页（内容自行书写）	
- 新建comment文件夹--含一个index.md文件--菜单栏  留言页（内容自行书写）	
- 新建href文件夹--含一个index.md文件--最下方  友情链接页（内容自行书写）	
- 新建music文件夹--含一个index.md文件--菜单栏  音乐页（内容自行书写）	
- 新建tool文件夹--含一个index.md文件--菜单栏    工具页（内容自行书写）	
- 粘贴一个favicon.ico的文件（网站图标）	
- 新建CNAME文件，无后缀（需要绑定域名的请在里面书写你的域名）	、
+URL分类下    
+ url: http://www.baidu.com ## 分享页的头网址，域名地址或iyohei.githug.io    
+ permalink: :year/:title.html ## 更改文章页的地址带有.html后缀    
+博客根目录下 source文件夹下    
+ 新建about文件夹--含一个index.md文件--最下方  关于博主页（内容自行书写）    
+ 新建comment文件夹--含一个index.md文件--菜单栏  留言页（内容自行书写）    
+ 新建href文件夹--含一个index.md文件--最下方  友情链接页（内容自行书写）    
+ 新建music文件夹--含一个index.md文件--菜单栏  音乐页（内容自行书写）    
+ 新建tool文件夹--含一个index.md文件--菜单栏    工具页（内容自行书写）    
+ 粘贴一个favicon.ico的文件（网站图标）    
+ 新建CNAME文件，无后缀（需要绑定域名的请在里面书写你的域名）    、
 
 ```
 
@@ -287,32 +289,25 @@ toc: true ##开启目录
 效果：例如友情链接在菜单栏中没有，加入此行代码会默认选中首页这个样式
 ```
 
-> 底部熊掌号使用
-
-```YAML
-qita.pug 20 行代码为自己的熊掌号script
-head.pug 19行代码为自己熊掌号ID声明
-```
-
 > 百度主动推送请阅读 [说明文档](https://hui-wang.info/2016/10/23/Hexo%E6%8F%92%E4%BB%B6%E4%B9%8B%E7%99%BE%E5%BA%A6%E4%B8%BB%E5%8A%A8%E6%8F%90%E4%BA%A4%E9%93%BE%E6%8E%A5/)
 
 ## 自行优化
 > 附上几个重要的文件作用，方便大家自行优化：
 
 ```YAML
-base.pug		集成head部分模版+底部
-archive.pug		归档页的模版
-page.pug		自定义页面的模版
-post.pug		文章页模版
-footer.pug		尾部文件模版
-footer02.pug  	底部菜单模版
-head.pug		首页的模版（主要是通用JS的引用，如评论，计数器）
-_footer文件夹	  底部菜单各模版
-search.pug		搜索模版
-推荐插件：
- 详见另一篇博文  hexo博客常用插件及教程
+base.pug        集成head部分模版+底部
+archive.pug        归档页的模版
+page.pug        自定义页面的模版
+post.pug        文章页模版
+footer.pug        尾部文件模版
+footer02.pug      底部菜单模版
+head.pug        首页的模版（主要是通用JS的引用，如评论，计数器）
+_footer文件夹      底部菜单各模版
+search.pug        搜索模版
 valine评论个性头像：https://cn.gravatar.com/全球头像分享网站-注册-设置头像,在valine评论中，填上注册时的邮箱就会显示头像
 ```
+
+> 推荐插件：  [hexo博客常用插件及教程](https://hfanss.com/2018/hexo%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%8F%8A%E6%95%99%E7%A8%8B.html)
 
 > 详细diy
 
@@ -323,22 +318,22 @@ valine评论个性头像：https://cn.gravatar.com/全球头像分享网站-注�
          在_footer文件夹中新建xxx.pug,写上内容
          在config文件中的footer下 添加进去 -xxx  即可显示
     修改:
-        gywo.pug		##关于我
-        gzhao.pug   	##公众号或微信二维码
-        xzhao.pug  		##百度熊掌号相关信息
-        links.pug  		##友情链接/关于本站/关于博主(简历)
+        gywo.pug        ##关于我
+        gzhao.pug       ##公众号或微信二维码
+        xzhao.pug          ##百度熊掌号相关信息
+        links.pug          ##友情链接/关于本站/关于博主(简历)
 友情链接:
-	sources/href/index.md
+    sources/href/index.md
 关于本站:
-	sources/site/index.md
+    sources/site/index.md
 关于博主:
-	sources/about/index.md
+    sources/about/index.md
 留言:
-	sources/comment/index.md
+    sources/comment/index.md
 工具:
-	sources/tool/index.md
+    sources/tool/index.md
 音乐:
-	sources/music/index.md
+    sources/music/index.md
 ```
 
 > 原版主题的配置只要没跟本主题冲突，没有特别说明，都可以支持
