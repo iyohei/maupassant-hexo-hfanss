@@ -1,0 +1,88 @@
+extends base
+
+block title
+  if config.subtitle
+    title= config.title + ' | ' + config.subtitle
+  else
+    title= config.title
+
+block content
+  .post-02
+  for post in page.posts.toArray()
+    .post
+      h1.post-title
+        include _partial/helpers.pug
+        a(href=url_for(post.path))
+          +title(post)
+      .post-meta
+        a(href=url_for(post.path))=post.date.format(config.date_format)+' | '
+        if post.categories.length > 0
+          span.category
+            for category in post.categories.toArray()
+              a(href=url_for(category.path))= category.name
+        if theme.valine.visitor == true
+          span(id=url_for(post.path),class='leancloud_visitors',data-flag-title="文章阅读量统计") &nbsp;| <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;
+            span.leancloud-visitors-count
+            span() 阅读
+        if theme.wordcount
+          span() &nbsp;|&nbsp;<i class="fa fa-keyboard-o"></i>&nbsp;
+            a(href=url_for(post.path))
+              span.post-count= wordcount(post.content)+' 字 '
+        if theme.readtime
+          span() &nbsp;|&nbsp;<i class="fa fa-hourglass-half"></i>&nbsp;
+            a(href=url_for(post.path))
+              span.post-count= ' 时长 '+min2read(post.content) +'分'
+      div(style="float:right;margin:15px 0 0;")
+        if theme.valine.enable
+          a(href=url_for(post.path)) <i class="fa fa-comment-o" aria-hidden="true"></i>&nbsp;
+            span.valine-comment-count(data-xid=url_for(post.path))
+            span= ' ' + __('Comment') +' '  
+        if post.yuanchuang
+          span() <i class="fa fa-ravelry"></i>&nbsp;
+          a(href=url_for(post.path)) 原创&nbsp;
+        if post.zhzai
+          span() <i class="fa fa-ravelry"></i>&nbsp;
+          a(href=url_for(post.path)) 转载&nbsp;
+        if post.top
+          span() <i class="fa fa-thumb-tack"></i>&nbsp;
+          a(href=url_for(post.path)) 置顶&nbsp;
+    <br><br>
+      if post.description
+        .post-content
+          != post.description
+      else if post.excerpt
+        .post-content(style="border-bottom: 1px dashed #ddd;")
+          != post.excerpt
+      else if post.content
+        - var br = 0
+        - for (var i = 0; i < 5; ++i) {
+          - br = post.content.indexOf('\n',br+1)
+          if br<0
+            - break
+          if br >150
+            - break
+        - }
+        if br < 0
+          .post-content(style="border-bottom: 1px dashed #ddd;")
+            != post.content
+        else
+          .post-content(style="border-bottom: 1px dashed #ddd;")
+            != post.content.substring(0, br)
+      p(class='readmore')
+        a(href=url_for(post.path))= __('Readmore')
+
+  include _partial/paginator.pug
+  include _partial/comments.pug
+  if config.mathjax
+    include _partial/mathjax.pug
+  if config.mathjax2
+    include _partial/mathjax2.pug
+  if theme.https
+    script. 
+        var url = window.location.href;
+        if (url.indexOf("https") < 0 ){   
+            if (url.indexOf("4000")<0){
+                url = url.replace("http:", "https:");    
+                window.location.replace(url)}};
+  script.
+        $('#vcomment').remove();

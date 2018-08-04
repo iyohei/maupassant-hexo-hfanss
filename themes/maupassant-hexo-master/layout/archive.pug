@@ -1,0 +1,32 @@
+extends base
+
+block title
+  if page.category
+     title= config.title + ' | ' + page.category
+  if page.tag
+     title= config.title + ' | ' + page.tag
+  if page.archive
+     title= __('archive') + ' | ' + config.title
+block content
+  .post-02
+  .post(style="width: 100%;padding-bottom: 15px;")
+    .post-copyright(style="margin:0 0 0")
+        //Use lodash to classify posts. See https://lodash.com/docs#groupBy
+        h2='共 [ '+site.categories.length+' ] 分类'+' • [ '+site.tags.length+' ] 标签 • [ '+site.posts.length+' ] 文章'
+        h3="分类"
+        h4(style="border-bottom: 1px dashed #ddd;padding-bottom: 10px;")
+          != list_categories({show_count: theme.show_category_count})
+        h3="标签"
+        h4(style="border-bottom: 1px dashed #ddd;padding-bottom: 15px;padding-left: 25px;")
+          != tagcloud({min_font: 15, max_font: 15, amount: 100, orderby: 'count', padding_right: 10})
+        if page.category || page.tag
+          h1.label-title=  __('reading_label', page.category || page.tag)
+        each posts, year in _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')})
+          h3= -year
+          ul.listing(style="border-bottom: 1px dashed #ddd;")
+            for post in posts
+              li
+                span.date= post.date.format('YYYY/MM/DD')+"　"
+                a(href=url_for(post.path), title=post.title)
+                  +title(post)
+  include _partial/paginator.pug

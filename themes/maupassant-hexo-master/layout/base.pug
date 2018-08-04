@@ -1,0 +1,56 @@
+include _partial/helpers.pug
+
+if page.title
+  - var current_title = page.title
+else
+  - var current_title = config.title
+
+if config.feed
+  case config.feed.type
+    when 'rss'
+      - var feed_type='application/rss+xml'
+    when 'atom'
+    default
+      - var feed_type='application/atom+xml'
+
+doctype html
+html(lang=config.language)
+
+  include _partial/head.pug
+
+  body
+  .search-total
+    .search-quanbu
+    .showSerch
+      != partial('search.pug')
+  div(id='header-02',class="header-02")
+    .header-02-1
+      .nav2#nav1
+        .header-02-2
+          span(class="logo-line-before") <i></i>
+          a(href=url_for('.'))= config.title
+          span(class="logo-line-before") <i></i>
+        .header-02-3
+          - for (var i in theme.menu)
+             +a_with_current(theme.menu[i].directory, __(theme.menu[i].page), theme.menu[i].icon)
+        .header-03
+          .header-02-5(onclick="showBars()")  <a  href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+          .header-02-4  <a onclick="showSerch()" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+          .header-02-6  <a  href="/."><i class="fa fa-home" aria-hidden="true"></i></a>
+  div(id='header-04',class="header-04",style="display: none;") 
+        .nav2
+          - for (var i in theme.mobileMenu)
+             +a_with_current(theme.mobileMenu[i].directory, __(theme.mobileMenu[i].page), theme.mobileMenu[i].icon)
+  .body_container
+    #layout.pure-g
+      .pure-u-1.pure-u-md-3-4(style="width: 100%;"): .content_container
+        block content
+  #footer-000
+    if theme.footersenable == true
+      .footer-02
+        != partial('_partial/footer-02.pug')
+    div(id='footer-01',style='text-align:center;margin:auto;font-size:14px;background-color:#f5f5f5;')
+        != partial('_partial/footer.pug')
+        include _partial/totop.pug
+        include _partial/after_footer.pug
+script(type='text/javascript', src=url_for(theme.js) + '/zidingyi.js', async)

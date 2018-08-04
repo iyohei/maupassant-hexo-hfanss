@@ -1,0 +1,18 @@
+if theme.baidu_search == true
+  .widget
+    .div(class="serach-span") <a href="#" onclick="outSerch()">关闭&nbsp;&nbsp;&nbsp;</a><br><br>
+    form(action='//www.baidu.com/baidu' method='get' accept-charset='utf-8' class='search-form' target='_blank')
+      input(type='search' name='word' maxlength='20' placeholder='回车键开启搜索')
+      input(type='hidden' name='si' value=config.url)
+      input(name='tn' type='hidden' value='bds')
+      input(name='cl' type='hidden' value='3')
+      input(name='ct' type='hidden' value='2097152')
+      input(name='s' type='hidden' value='on')
+if theme.self_search == true
+  .div(class="serach-span") <a href="#" onclick="outSerch()">关闭&nbsp;&nbsp;&nbsp;</a><br><br>
+  .widget
+    .search-form
+      input(id='local-search-input' placeholder='回车键开启搜索' type='text' name='q' results='0' )
+      <br>
+      div#local-search-result
+

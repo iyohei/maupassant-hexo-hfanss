@@ -1,0 +1,4 @@
+div(style="max-width:1150px;margin:0 auto;height:200px;")
+    div(id="123",style="display:flex",class="footer-div-a")
+      each item in theme.footers
+        != partial('_footer/' + item + '.pug', null, {cache: !config.relative_link})

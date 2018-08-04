@@ -1,0 +1,19 @@
+div(style="max-width:1150px;display:flex;margin:0 auto",class="footer-div-a")
+  div(style="padding-left:10px;padding-top:7px;padding-bottom:7px;text-align: left;",class="footer-div-b")
+    a(rel='nofollow')= '©'+date(Date.now(), 'YYYY')+' ' + ' ❤ '
+    a(href=url_for('.'), rel='nofollow',font-size='14px',font-weight='bold')= config.title
+    if theme.beian.enable
+      <br>
+      a(href='http://www.miibeian.gov.cn/' target="_Blank")=theme.beian.note
+  div(style="padding-right:10px;padding-top:15px;padding-bottom:7px;text-align: right;",class="footer-div-b")
+    if theme.baidu.enable
+      a(href=theme.baidu.url,target="_Blank" title="百度统计") <img class="nofancybox" width="40px" height="15px" src="/img/baidu.png"/>
+    if theme.github.enable
+      a() &emsp;
+      a(href=theme.github.url,target="_Blank" title="github" style="font-size:19px;") <i class="fa fa-github" aria-hidden="true"></i>
+    if theme.gitee.enable
+      a() &emsp;
+      a(href=theme.gitee.url,target="_Blank" title="码云") <img class="nofancybox" width="15px" height="15px" src="/img/gitee.ico"/>
+    if theme.csdn.enable
+      a() &emsp;
+      a(href=theme.csdn.url,target="_Blank"  title="CSDN") <img class="nofancybox" width="15px" height="15px" src="/img/csdn.ico"/>

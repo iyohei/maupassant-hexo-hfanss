@@ -1,6 +1,7 @@
-> 图片效果
-
-![](https://huanfan-1252958858.cos.ap-shanghai.myqcloud.com/2018/08/QQ%E5%9B%BE%E7%89%8720180804130958.jpg)
+> 基于屠城hexo主题优化版,个人自用版
+>
+> 优化部分显示效果，增加部分配置
+> <!--more-->
 
 # 原版主题
 
@@ -20,10 +21,9 @@
 > [https://www.haomwei.com/](https://www.haomwei.com/)
 
 ## 本优化版
-
-> github地址：
+> gitee地址：
 >
-> [https://github.com/iyohei/maupassant-hexo-hfanss](https://github.com/iyohei/maupassant-hexo-hfanss)
+> [https://gitee.com/iyohei/hfanss.git](https://gitee.com/iyohei/hfanss.git)
 
 > 相关配置介绍：
 >
@@ -237,9 +237,21 @@ version: 0.1.0
 
 # 安装插件	
 ```YAML
-npm install --save hexo-deployer-git hexo-generator-archive hexo-generator-category hexo-generator-index-pin-top hexo-generator-search hexo-generator-tag hexo-helper-qrcode hexo-renderer-ejs hexo-renderer-marked hexo-renderer-pug hexo-renderer-sass hexo-renderer-stylus hexo-server hexo-tag-aplayer hexo-wordcount
+npm install hexo-renderer-pug --save	##渲染器
+
+npm install hexo-renderer-sass --save	
+
+npm install hexo-generator-search --save	  ## 本地jquery搜索插件
+
+npm uninstall hexo-generator-index --save	   ## 文章置顶插件
+
+npm install hexo-generator-index-pin-top --save	## 文章置顶插件
+
+npm i --save hexo-wordcount  ##文章字数统计+阅读时长
+
+npm install hexo-baidu-url-submit --save  ##百度链接主动推送
+
 ```
-安装不成功可以通过 [淘宝镜像](https://npm.taobao.org) 下载
 
 # 修改配置	
 ```YAML
@@ -345,6 +357,6 @@ valine评论个性头像：https://cn.gravatar.com/全球头像分享网站-注�
 
 ------
 
-如有本主题的相关优化问题，可在下方评论区留言
-github有时候会抽风，提供码云备用地址：[点我](https://gitee.com/iyohei/hfanss)
+ 如有本主题的相关优化问题，可在下方评论区留言
+
 另：如大家使用本主题，还请在下载主题页  右上角   star  一下，感谢！

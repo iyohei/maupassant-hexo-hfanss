@@ -1,0 +1,17 @@
+div(style="height:120px;",class="footer-div-b")
+   div(style="text-align:left;padding-top:20px;padding-bottom:5px;")
+   if theme.weixin.enable
+      div(style="padding-top:7px;padding-bottom:7px;padding-left:5px;text-align:left;") <i class="fa fa-weixin" aria-hidden="true"></i> 
+        a(href=theme.weixin.url,title="微信",target="_Blank")=' '+theme.weixin.name
+   if theme.weibo.enable
+      div(style="padding-top:7px;padding-bottom:7px;padding-left:5px;text-align:left;") <i class="fa fa-weibo" aria-hidden="true"></i>
+        a(href=theme.weibo.url,title="微博",target="_Blank")=' '+theme.weibo.name
+   if theme.qq.enable
+      div(style="padding-top:7px;padding-bottom:7px;padding-left:5px;text-align:left;") <i class="fa fa-qq" aria-hidden="true"></i>
+        a(href=theme.qq.url,title="QQ",target="_Blank")=' '+theme.qq.name
+   if theme.email.enable
+      div(style="padding-top:7px;padding-bottom:7px;padding-left:5px;text-align:left;") <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        a(href=theme.email.url,title="邮件",target="_Blank")=' '+theme.email.name
+   if theme.address.enable
+      div(style="padding-top:7px;padding-bottom:7px;padding-left:5px;text-align:left;") <i class="fa fa-map-marker" aria-hidden="true"></i>
+        a(href=theme.address.url,title="地址",target="_Blank")='  '+theme.address.name

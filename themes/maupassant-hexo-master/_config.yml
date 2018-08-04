@@ -1,0 +1,164 @@
+
+valine: ## https://valine.js.org        评论系统
+  enable: false ## 是否开启valine评论系统
+  appid:  ## LeanCloud App ID, pRBBL2JR4N7kLEGojrF0MsSs-gzGzoHsz
+  appkey:  ##LeanCloud App Key, e.g. tjczHpDfhjYDSYddzymYK1JJ
+  notify: false ## Mail notifier, see https://github.com/xCss/Valine/wiki/Valine-评论系统中的邮件提醒设置
+  verify: true ## 启用评论校验功能
+  placeholder: 　 ## 留言板预设内容
+  visitor: true ## 1.2版本新增功能阅读统计，具体使用参考https://valine.js.org/visitor.html
+  avatar: 'monsterid' ## 默认头像 参考 https://valine.js.org/avatar.html
+  pageSize: 10 ## 每页显示评论条数
+  guest_info: nick,mail,link ## 昵称，邮箱，网站
+## 百度统计ID
+baidu_analytics:  ## 百度统计ID id, e.g. 8006843039519956000
+## 图片灯箱开关
+fancybox: true ## 是否启用Fancybox图片灯箱效果,建议开启（效果为点击图片既放大）
+##版权声明，加在每篇文章下方
+banquan: 
+  enable: true ##是否开启
+  name: 幻凡ss
+  note: 本文所有权归博主所有，转载请注明署名、出处！Thanks ##版权信息
+## 强制https访问开关
+https: true ## 是否开启强制https（不影响本地调试）,本开关说明：https网站能正常访问开启才有效，如www.baidu.com跳转到http://www.baidu.com，不自动跳到https开头的网址，而且https://www.baidu.com能正常访问才行
+## 文章字数统计开关
+wordcount: true ##文章字数统计
+readtime: false ##文章阅读时长统计
+## daovice在线聊天相关 官网：http://www.daovoice.io/
+daovoice: false ## 页面右下角在线聊天
+daovoice_app_id:  ## daovice  ID 如：22c081c3
+##搜索相关,只能开启一项
+self_search: true ## 页面jquery搜索，需安装插件,开启此搜索后，博客根目录的  url属性必须带有http://和https://
+baidu_search: false ##百度搜索.开启百度搜索后，博客根目录的  url属性不能带有http://和https://,否则会导致搜索不到东西（原理：基于你的网站百度收录结果搜索，如果没有被百度收录，就不会有结果）
+## 文章目录开关
+toc_number: true ## 文章目录开关 使用方法：#一级目录  ##二级目录  。。。 以此类推
+## 文章分享开关  使用bshare.js  官网：http://www.bshare.cn/、注册站长并输入网址  需替换post.pug  55行script
+shareto: true ## 文章分享开关
+## 文章捐赠按钮。赞赏按钮
+donate:
+  enable: false ## If you want to show the donate button after each post, please set the value to true and fill the following items according to your need. You can also enable donate button in a page by adding a "donate: true" item to the front-matter.
+  github: https://github.com/hfanss ## GitHub URL, e.g. https://github.com/Kaiyuan/donate-page
+  alipay_qr: /img/AL.png ## Path of Alipay QRcode image, e.g. /img/AliPayQR.png
+  wechat_qr: /img/QQ.png## Path of Wechat QRcode image, e.g. /img/WeChatQR.png
+  btc_qr: ## Path of Bitcoin QRcode image, e.g. /img/BTCQR.png
+  btc_key: ## Bitcoin key, e.g. 1KuK5eK2BLsqpsFVXXSBG5wbSAwZVadt6L
+  paypal_url: ## Paypal URL, e.g. https://paypal.me/tufu9441
+
+
+## 微信相关信息
+weixin:
+    enable: true
+    name: hyaini ##微信号码
+    url:  https://huanfan-1252958858.cos.ap-shanghai.myqcloud.com/pic/302701117226241178.jpg ##微信个人二维码url       
+## 微博相关信息
+weibo:
+    enable: true
+    name: 幻凡ss ##微博名字
+    url: https://weibo.com/0377k  ##微博外链  如：https://weibo.com/0377k
+## QQ相关信息
+qq:
+    enable: true
+    name: 2158798 ##QQ号码
+    url: https://wpa.qq.com/msgrd?v=3&uin=2158798&site=qq&menu=yes ##网页QQ聊天的外链  如  https://wpa.qq.com/msgrd?v=3&uin=2158798&site=qq&menu=yes 
+## email相关信息
+email:
+    enable: true
+    name: hfans@foxmail.com  ##邮箱地址
+    url: http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=8JiWkZ6DsJafiJ2RmZzek5_d ##邮箱外链  如：http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=8JiWkZ6DsJafiJ2RmZzek5_d
+## 联系地址相关信息
+address:
+    enable: true
+    name: Pudong New Area, Shanghai, China ##地理位置的英文（请不要太过具体）
+    url: http://map.baidu.com/?newmap=1&ie=utf-8&s=s%26wd%3D%E4%B8%8A%E6%B5%B7%E5%B8%82%E6%B5%A6%E4%B8%9C%E6%96%B0%E5%8C%BA%E5%94%90%E9%95%87%E6%9D%A5%E5%AE%89%E8%B7%AF%E5%85%B4%E4%B8%9A%E9%93%B6%E8%A1%8C%28%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83%29 ##公司在百度地图上的位置的网址
+## 百度熊掌号相关信息
+xzHao:
+    enable: true
+    note: 专注Java • 分享生活 • 记录人生 ##熊掌号描述
+    url: https://author.baidu.com/home/1603347506741536?from=dusite_artdetailh5 ##熊掌号url
+## 备案相关信息
+beian:
+    enable: true
+    note: 豫ICP备18024944号-1 ##备案号
+## 百度统计相关信息
+baidu:
+    enable: true
+    url: https://tongji.baidu.com/web/25553450/overview/index?siteId=11976031 ##百度统计的网址，点开百度云图标后登陆可看到网站统计\
+## github相关信息
+github:
+    enable: true
+    url: https://github.com/hfanss/ ##github外链 如 ：https://github.com/hfanss/
+## 码云相关信息
+gitee:
+    enable: true
+    url: https://gitee.com/iyohei ##码云外链 如 ：https://gitee.com/iyohei
+## CSDN相关信息
+csdn:
+    enable: true
+    url: https://blog.csdn.net/q2158798 ##CSDN博客外链 如：https://blog.csdn.net/q2158798
+## 底部显示设置
+footersenable: true   ##是否开启底部菜单栏
+footers: 
+  - gywo    ##关于我
+  - gzhao   ##公众号或微信二维码
+  - xzhao   ##百度熊掌号相关信息
+  - links   ##友情链接/关于本站/关于博主(简历)
+## PC菜单显示选项  
+menu:
+  - page: home
+    directory: .
+    icon: fa-home2
+  - page: archive ##显示名字，根据中英文兑换，也可直接写中文
+    directory: archives/   ##链接地址（source下的文件夹）
+    icon: fa-archive2   ##图标。在线图标，http://www.fontawesome.com.cn/faicons/，把名字贴这里即可
+  - page: music
+    directory: music/
+    icon: fa-user2
+  - page: tool
+    directory: tool/
+    icon: fa-user2 
+  - page: guestbook
+    directory: comment/
+    icon: fa-rss2
+
+## 移动端菜单显示选项  
+mobileMenu:
+  - page: home
+    directory: .
+    icon: fa-home2
+  - page: archive ##显示名字，根据中英文兑换，也可直接写中文
+    directory: archives/   ##链接地址（source下的文件夹）
+    icon: fa-archive2   ##图标。在线图标，http://www.fontawesome.com.cn/faicons/，把名字贴这里即可
+  - page: music
+    directory: music/
+    icon: fa-user2
+  - page: tool
+    directory: tool/
+    icon: fa-user2 
+  - page: guestbook
+    directory: comment/
+    icon: fa-rss2
+  - page: about
+    directory: about/
+    icon: fa-rss2
+  - page: site
+    directory: site/
+    icon: fa-rss2
+  - page: href
+    directory: href/
+    icon: fa-rss2
+## 网站地图   博主没用过，意义不大
+timeline:
+  - num: 1
+    word: 2014/06/12-Start
+  - num: 2
+    word: 2014/11/29-XXX
+  - num: 3
+    word: 2015/02/18-DDD
+  - num: 4
+    word: More
+# Static files。缓存目录
+js: js
+css: css
+
+# 主题版本，方便刷新
+version: 0.1.0
